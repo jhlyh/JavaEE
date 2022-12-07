@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://gz-cdb-rtzggr55.sql.tencentcdb.com:56814/javaee
-    username: user
-    password: 789456123@qqcom
+    url:
+    username:
+    password:
   jpa:
     hibernate:
       ddl-auto: update
