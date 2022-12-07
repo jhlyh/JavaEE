@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    课程
+</div>
+<div>
+    <form th:method="post" th:object="${course}">
+        <input placeholder="课程名" type="text" th:field="*{name}">
+        <input placeholder="课程描述"  type="text" th:field="*{info}">
+        <input placeholder="授课时间" type="date" th:field="*{time}">
+        <input placeholder="可选人数" type="number" th:field="*{num}">
+        <input placeholder="教室" type="text" th:field="*{classroom}">
+        <div th:each="t : ${type}">
+            <input type="radio" th:field="*{type}" th:value="${t}">
+            <span th:text="线上" th:if = "${t.name() == 'T_On'}"></span>
+            <span th:text="线下" th:if = "${t.name() == 'T_Off'}"></span>
+        </div>
+        <div th:each="p : ${prof}">
+            <input type="radio" th:field="*{profession}" th:value="${p}">
+            <span th:text="软件工程" th:if = "${p.name() == 'P_SE'}"></span>
+            <span th:text="计算机科学与技术" th:if = "${p.name() == 'P_CS'}"></span>
+            <span th:text="机械工程" th:if = "${p.name() == 'P_ME'}"></span>
+            <span th:text="网络安全" th:if = "${p.name() == 'P_NS'}"></span>
+        </div>
+        <button>添加</button>
+    </form>
+</div>
+</body>
+</html>

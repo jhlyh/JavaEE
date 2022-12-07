@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="c : ${courses}">
+        <span th:text="${c.name}"></span>
+</div>
+<form th:object="${OneCourse}" method="post">
+    <select th:field="*{name}">
+        <option th:each="c : ${courses}" th:value="${c.name}" th:text="${c.name}"></option>
+    </select>
+    <button>查看细节</button>
+</form>
+</body>
+</html>

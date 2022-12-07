@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>细节</h1>
+<form th:object="${course}" th:action="@{/}" method="get">
+    <h3>课程名称：</h3>
+    <span th:text="${course.name}"></span>
+    <h3>课程描述：</h3>
+    <span th:text="${course.info}"></span>
+    <h3>授课时间：</h3>
+    <span th:text="${course.time}"></span>
+    <h3>课程地点：</h3>
+    <span th:text="${course.classroom}"></span>
+    <h3>课程人数：</h3>
+    <span th:text="${course.num}"></span>
+    <h3>课程类型</h3>
+    <div>
+        <span th:text="线上" th:if = "${course.type.name() == 'T_On'}"></span>
+        <span th:text="线下" th:if = "${course.type.name() == 'T_Off'}"></span>
+    </div>
+    <h3>课程专业</h3>
+    <div>
+        <span th:text="软件工程" th:if = "${course.profession.name() == 'P_SE'}"></span>
+        <span th:text="计算机科学与技术" th:if = "${course.profession.name() == 'P_CS'}"></span>
+        <span th:text="机械工程" th:if = "${course.profession.name() == 'P_ME'}"></span>
+        <span th:text="网络安全" th:if = "${course.profession.name() == 'P_NS'}"></span>
+    </div>
+    <button>主页</button>
+</form>
+<form method="get" th:object="${course}" th:action="@{/course/change}"></form>
+</body>
+</html>

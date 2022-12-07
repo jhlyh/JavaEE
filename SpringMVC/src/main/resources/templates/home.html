@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>主页</h1>
+<form th:method="get" th:action="@{/login}">
+    <button>
+        登录
+    </button>
+</form>
+<form th:method="get" th:action="@{/course}">
+    <button>
+        添加课程
+    </button>
+</form>
+<form th:method="get" th:action="@{/course/findAll}">
+    <button>
+        查看课程
+    </button>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <title>
+        Login
+    </title>
+</head>
+<body>
+<h1>
+    登录界面
+</h1>
+<form method="post" th:object="${user}">
+    <input placeholder="账号" th:field="*{username}">
+    <input placeholder="密码" th:field="*{password}">
+    <button>
+        登录
+    </button>
+</form>
+</body>
+</html>
